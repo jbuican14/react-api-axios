@@ -19,11 +19,6 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .header-img {
   align-self: center;
   border-radius: 100px;
@@ -33,10 +28,10 @@
 }
 
 .selectField {
-  width: 50%;
+  width: 70%;
   max-width: 300px;
 }
-
-.card .card-action {
-  background-image: linear-gradient(30deg,#6068772e 50%,transparent 50%);
+.row {
+  border-right: 1px solid #48414175;
+  box-shadow: 2px 1px #039be540
 }

@@ -1,16 +1,17 @@
 
 import React, {Component} from 'react';
 import NewsSingle from './NewsSingle'; 
+import Err from './Err';
 
 class News extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
         let topic = props.topic;
         this.state={
             news: [],
-            title: topic
+            title: topic,
+            err: false,
         };
     }
 
@@ -25,13 +26,20 @@ class News extends Component {
                 news: json.articles
             })
         })
-        .catch( err => console.log('err', err));
+        .catch( err => {
+            this.setState({ err : true})
+        });
     }
 
     renderItems() {
-        return this.state.news.map( (item, idx)=> (
-            <NewsSingle key={idx} item={item} />
-        ));
+        if(!this.state.err){
+            return this.state.news.map( (item, idx)=> (
+                <NewsSingle key={idx} item={item} />
+            ));
+        }else {
+            return <Err />
+        }
+        
     }
 
     render() {
