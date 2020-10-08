@@ -8,18 +8,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to News Built in React</h1>
+          <img src="https://juti.thehackneywick.co.uk/img/myAvatar.png" alt="juti" className="header-img"/>
         </header>
-        <div className="Form">
-          <div className="selectField">
-          <select defaultValue="gb">
-            <option value="default" disabled>Choose your option</option>
-            <option value="us">USA</option>
-            <option value="gb">UK</option>
-            <option value="all">CA</option>
-          </select>
-          <label>News Select</label>
-        </div>
-        </div>
         <News topic={"gb"} /> 
       </div>
     );

@@ -15,17 +15,12 @@ class News extends Component {
     }
 
     componentDidMount() {
-        console.log('[componentDidMount]'); // 7e810ebb61064910ac74e6e326cc3e16
-
-        // const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=7e810ebb61064910ac74e6e326cc3e16';
-        const url = 'https://newsapi.org/v2/top-headlines?country='+ this.state.title +'&apiKey=7e810ebb61064910ac74e6e326cc3e16';
-
+        const url = 'https://newsapi.org/v2/top-headlines?country='+ this.state.title +'&apiKey=[Your Key]';
         fetch(url)
         .then( res => {
             return res.json();
         })
         .then( json => {
-            console.log(json); 
             this.setState( {
                 news: json.articles
             })
